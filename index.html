@@ -23,14 +23,24 @@
             </a>
             
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#shop">Medical Shop</a></li>
-                <li><a href="#doctors">Specialists</a></li>
+                <li><a href="#home"><i class="ri-home-4-line"></i> Home</a></li>
+                <li><a href="#about"><i class="ri-information-line"></i> About Us</a></li>
+                <li><a href="#services"><i class="ri-stethoscope-line"></i> Services</a></li>
+                <li><a href="#shop"><i class="ri-shopping-bag-line"></i> Medical Shop</a></li>
+                <li><a href="#doctors"><i class="ri-team-line"></i> Specialists</a></li>
+                <!-- Mobile Only Profile Item -->
+                <li id="mobile-profile-item" style="display: none;"></li>
+                <li class="mobile-only-nav-item"><a href="#appointment"><i class="ri-calendar-check-line"></i> Book Appointment</a></li>
             </ul>
             
             <div class="nav-actions">
+                <div class="cart-icon-wrapper" id="cart-btn">
+                    <i class="ri-shopping-cart-2-line"></i>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </div>
+                <button class="btn btn-outline" id="login-btn">Login</button>
+                <div id="profile-container" style="display: none;"></div>
+                
                 <a href="#appointment" class="btn btn-primary">Book Appointment</a>
                 <div class="mobile-menu-btn">
                     <i class="ri-menu-3-line"></i>
@@ -38,7 +48,6 @@
             </div>
         </div>
     </header>
-
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container hero-container">
@@ -158,54 +167,188 @@
                 <p>Browse our curated selection of premium vitamins, healthcare devices, and pharmacy essentials.</p>
             </div>
             
-            <div class="shop-grid">
-                <!-- Product 1 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=600&q=80" alt="Vitamin C Tablets" class="product-img">
-                    <div class="product-details">
-                        <span class="product-cat">Supplements</span>
-                        <h3 class="product-title">Immune Defense Vitamin C</h3>
-                        <div class="product-price">₹1,999</div>
-                        <button class="product-add">Add to Cart</button>
+            <div class="shop-container">
+                <div class="shop-track">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=600&q=80" alt="Vitamin C Tablets" class="product-img">
+                        <div class="product-details">
+                            <span class="product-cat">Supplements</span>
+                            <h3 class="product-title">Immune Defense Vitamin C</h3>
+                            <div class="product-price">₹1,999</div>
+                            <button class="product-add">Add to Cart</button>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=600&q=80" alt="Blood Pressure Monitor" class="product-img">
-                    <div class="product-details">
-                        <span class="product-cat">Devices</span>
-                        <h3 class="product-title">Smart Blood Pressure Monitor</h3>
-                        <div class="product-price">₹6,499</div>
-                        <button class="product-add">Add to Cart</button>
+                    
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=600&q=80" alt="Blood Pressure Monitor" class="product-img">
+                        <div class="product-details">
+                            <span class="product-cat">Devices</span>
+                            <h3 class="product-title">Smart Blood Pressure Monitor</h3>
+                            <div class="product-price">₹6,499</div>
+                            <button class="product-add">Add to Cart</button>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=600&q=80" alt="First Aid Kit" class="product-img">
-                    <div class="product-details">
-                        <span class="product-cat">Essentials</span>
-                        <h3 class="product-title">Premium First Aid Kit</h3>
-                        <div class="product-price">₹2,899</div>
-                        <button class="product-add">Add to Cart</button>
+                    
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=600&q=80" alt="First Aid Kit" class="product-img">
+                        <div class="product-details">
+                            <span class="product-cat">Essentials</span>
+                            <h3 class="product-title">Premium First Aid Kit</h3>
+                            <div class="product-price">₹2,899</div>
+                            <button class="product-add">Add to Cart</button>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&w=600&q=80" alt="Protein Supplement" class="product-img">
-                    <div class="product-details">
-                        <span class="product-cat">Nutrition</span>
-                        <h3 class="product-title">Organic Plant Protein</h3>
-                        <div class="product-price">₹3,799</div>
-                        <button class="product-add">Add to Cart</button>
+                    
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&w=600&q=80" alt="Protein Supplement" class="product-img">
+                        <div class="product-details">
+                            <span class="product-cat">Nutrition</span>
+                            <h3 class="product-title">Organic Plant Protein</h3>
+                            <div class="product-price">₹3,799</div>
+                            <button class="product-add">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=600&q=80" alt="Daily Multi-Vitamin Elite" class="product-img">
+                        <div class="product-details">
+                            <span class="product-cat">Supplements</span>
+                            <h3 class="product-title">Daily Multi-Vitamin Elite</h3>
+                            <div class="product-price">₹1,499</div>
+                            <button class="product-add">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <img src="assets/img/pulse_oximeter.png" alt="Advanced Pulse Oximeter" class="product-img">
+                        <div class="product-details">
+                            <span class="product-cat">Devices</span>
+                            <h3 class="product-title">Advanced Pulse Oximeter</h3>
+                            <div class="product-price">₹1,299</div>
+                            <button class="product-add">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="product-card">
+                        <img src="assets/img/forehead_thermometer.png" alt="Infrared Forehead Thermometer" class="product-img">
+                        <div class="product-details">
+                            <span class="product-cat">Devices</span>
+                            <h3 class="product-title">Infrared Forehead Thermometer</h3>
+                            <div class="product-price">₹2,499</div>
+                            <button class="product-add">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="product-card">
+                        <img src="assets/img/omega3_fish_oil.png" alt="Pure Omega-3 Fish Oil" class="product-img">
+                        <div class="product-details">
+                            <span class="product-cat">Supplements</span>
+                            <h3 class="product-title">Pure Omega-3 Fish Oil</h3>
+                            <div class="product-price">₹1,899</div>
+                            <button class="product-add">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate Product 1 (for infinite marquee loop) -->
+                    <div class="product-card" aria-hidden="true">
+                        <img src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=600&q=80" alt="Vitamin C Tablets" class="product-img">
+                        <div class="product-details">
+                            <span class="product-cat">Supplements</span>
+                            <h3 class="product-title">Immune Defense Vitamin C</h3>
+                            <div class="product-price">₹1,999</div>
+                            <button class="product-add" tabindex="-1">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Duplicate Product 2 (for infinite marquee loop) -->
+                    <div class="product-card" aria-hidden="true">
+                        <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=600&q=80" alt="Blood Pressure Monitor" class="product-img">
+                        <div class="product-details">
+                            <span class="product-cat">Devices</span>
+                            <h3 class="product-title">Smart Blood Pressure Monitor</h3>
+                            <div class="product-price">₹6,499</div>
+                            <button class="product-add" tabindex="-1">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Duplicate Product 3 (for infinite marquee loop) -->
+                    <div class="product-card" aria-hidden="true">
+                        <img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=600&q=80" alt="First Aid Kit" class="product-img">
+                        <div class="product-details">
+                            <span class="product-cat">Essentials</span>
+                            <h3 class="product-title">Premium First Aid Kit</h3>
+                            <div class="product-price">₹2,899</div>
+                            <button class="product-add" tabindex="-1">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Duplicate Product 4 (for infinite marquee loop) -->
+                    <div class="product-card" aria-hidden="true">
+                        <img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&w=600&q=80" alt="Protein Supplement" class="product-img">
+                        <div class="product-details">
+                            <span class="product-cat">Nutrition</span>
+                            <h3 class="product-title">Organic Plant Protein</h3>
+                            <div class="product-price">₹3,799</div>
+                            <button class="product-add" tabindex="-1">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate Product 5 (for infinite marquee loop) -->
+                    <div class="product-card" aria-hidden="true">
+                        <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=600&q=80" alt="Daily Multi-Vitamin Elite" class="product-img">
+                        <div class="product-details">
+                            <span class="product-cat">Supplements</span>
+                            <h3 class="product-title">Daily Multi-Vitamin Elite</h3>
+                            <div class="product-price">₹1,499</div>
+                            <button class="product-add" tabindex="-1">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate Product 6 (for infinite marquee loop) -->
+                    <div class="product-card" aria-hidden="true">
+                        <img src="assets/img/pulse_oximeter.png" alt="Advanced Pulse Oximeter" class="product-img">
+                        <div class="product-details">
+                            <span class="product-cat">Devices</span>
+                            <h3 class="product-title">Advanced Pulse Oximeter</h3>
+                            <div class="product-price">₹1,299</div>
+                            <button class="product-add" tabindex="-1">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate Product 7 (for infinite marquee loop) -->
+                    <div class="product-card" aria-hidden="true">
+                        <img src="assets/img/forehead_thermometer.png" alt="Infrared Forehead Thermometer" class="product-img">
+                        <div class="product-details">
+                            <span class="product-cat">Devices</span>
+                            <h3 class="product-title">Infrared Forehead Thermometer</h3>
+                            <div class="product-price">₹2,499</div>
+                            <button class="product-add" tabindex="-1">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate Product 8 (for infinite marquee loop) -->
+                    <div class="product-card" aria-hidden="true">
+                        <img src="assets/img/omega3_fish_oil.png" alt="Pure Omega-3 Fish Oil" class="product-img">
+                        <div class="product-details">
+                            <span class="product-cat">Supplements</span>
+                            <h3 class="product-title">Pure Omega-3 Fish Oil</h3>
+                            <div class="product-price">₹1,899</div>
+                            <button class="product-add" tabindex="-1">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="#" class="btn btn-outline">View Full Shop</a>
+                <button id="view-shop-btn" class="btn btn-outline">View Full Shop</button>
             </div>
         </div>
     </section>
@@ -239,6 +382,16 @@
                     <div class="why-icon"><i class="ri-hand-heart-line"></i></div>
                     <h3>Painless Billing</h3>
                     <p>Transparent pricing, insurance coverage tracking, and simple digital checkout options.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="ri-capsule-line"></i></div>
+                    <h3>Integrated Pharmacy</h3>
+                    <p>Immediate access to expert-approved medicines and premium health essentials at our on-site retail shop.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="ri-shield-user-line"></i></div>
+                    <h3>Telehealth Support</h3>
+                    <p>Secure virtual consultations and remote care monitoring with your specialists from the comfort of home.</p>
                 </div>
             </div>
         </div>
@@ -312,34 +465,831 @@
                     <form action="#" id="booking-form">
                         <div class="form-row">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Name" required>
+                                <input type="text" name="name" class="form-control" placeholder="Your Name *" required>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Your Email" required>
+                                <input type="email" name="email" class="form-control" placeholder="Your Email *" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <input type="tel" class="form-control" placeholder="Phone Number" required>
+                                <input type="tel" name="phone" class="form-control" placeholder="Phone Number *" required>
                             </div>
                             <div class="form-group">
-                                <select class="form-control" required>
-                                    <option value="" disabled selected>Select Department</option>
-                                    <option value="cardiology">Cardiology</option>
-                                    <option value="neurology">Neurology</option>
-                                    <option value="pediatrics">Pediatrics</option>
-                                    <option value="general">General Checkup</option>
+                                <select name="department" class="form-control" required>
+                                    <option value="" disabled selected>Select Department *</option>
+                                    <option value="cardiology">Cardiology (Heart Care)</option>
+                                    <option value="neurology">Neurology (Brain & Spine)</option>
+                                    <option value="pediatrics">Pediatrics (Child Health)</option>
+                                    <option value="orthopedics">Orthopedics (Bones & Joints)</option>
+                                    <option value="dermatology">Dermatology (Skin & Hair)</option>
+                                    <option value="ophthalmology">Ophthalmology (Eye Care)</option>
+                                    <option value="gynecology">Gynecology & Obstetrics (Women's Health)</option>
+                                    <option value="dentistry">Dentistry (Dental Care)</option>
+                                    <option value="ent">ENT (Ear, Nose, Throat)</option>
+                                    <option value="general">General Medicine</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <input type="date" class="form-control" required>
+                        <div class="form-group" style="position: relative;">
+                            <input type="date" name="date" class="form-control" required>
+                            <span class="error-message" id="date-error-msg">
+                                <i class="ri-error-warning-line"></i> Date cannot be in the past.
+                            </span>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Briefly describe your symptoms or reason for visit..."></textarea>
+                            <textarea name="symptoms" class="form-control" placeholder="Briefly describe your symptoms or reason for visit..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">Confirm Appointment</button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Testimonials Section (Wall of Love Marquee) -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Patients Say</h2>
+                <p>Trusted by thousands of families. Read about their experiences and journeys to recovery with Medisphere Clinic's specialized medical care.</p>
+            </div>
+        </div>
+
+        <div class="testimonials-container">
+            <!-- Single Row: Slides Left -->
+            <div class="testimonials-row">
+                <div class="testimonials-track-left">
+                                        <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"The pediatricians here are incredibly gentle and friendly. My young daughter actually looks forward to her wellness checkups now!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Sarah Jenkins">
+                            <div class="testimonial-user-info">
+                                <h5>Sarah Jenkins</h5>
+                                <span>Pediatrics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Superb cardiology team. From the diagnostics stage to my recovery program, the staff monitored my progress with absolute dedication."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="David Miller">
+                            <div class="testimonial-user-info">
+                                <h5>David Miller</h5>
+                                <span>Cardiology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Outstanding neurologists! They accurately diagnosed my chronic, debilitating migraines after years of other treatments failing."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Maria Santos">
+                            <div class="testimonial-user-info">
+                                <h5>Maria Santos</h5>
+                                <span>Neurology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"My knee replacement recovery was incredibly smooth and successful. Truly skilled, elite orthopedic surgeons and physical therapists."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80" alt="James Wilson">
+                            <div class="testimonial-user-info">
+                                <h5>James Wilson</h5>
+                                <span>Orthopedics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"My laser eye procedure was a complete breeze. The ophthalmology clinic has incredibly clear procedures and state-of-the-art tech."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Emily Watson">
+                            <div class="testimonial-user-info">
+                                <h5>Emily Watson</h5>
+                                <span>Ophthalmology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Incredible gynecological and obstetric care. The obstetricians made me feel supported, safe, and heard during my entire pregnancy."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Priya Patel">
+                            <div class="testimonial-user-info">
+                                <h5>Priya Patel</h5>
+                                <span>Gynecology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 7 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Routine medical checkups are fast, professional, and very thorough. The general medicine doctors are highly empathetic and helpful."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="John Doe">
+                            <div class="testimonial-user-info">
+                                <h5>John Doe</h5>
+                                <span>General Medicine</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 8 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"They helped me completely resolve a severe eczema flare-up. Excellent, modern dermatological treatments and highly professional staff."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" alt="Lisa Wang">
+                            <div class="testimonial-user-info">
+                                <h5>Lisa Wang</h5>
+                                <span>Dermatology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 9 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"The dental team did my crown work flawlessly and completely painlessly. Hands down, the best modern dental care experience I've had."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80" alt="Marcus Aurelius">
+                            <div class="testimonial-user-info">
+                                <h5>Marcus Aurelius</h5>
+                                <span>Dentistry</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Testimonial 10 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Fantastic post-operative cardiology rehabilitation program. The specialized doctors and nurses saved my life and restored my health."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" alt="Robert Chen">
+                            <div class="testimonial-user-info">
+                                <h5>Robert Chen</h5>
+                                <span>Cardiology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 11 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"After suffering from severe sinus pain for months, the ENT specialist here provided instant, highly effective treatment."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=150&q=80" alt="Emily Brown">
+                            <div class="testimonial-user-info">
+                                <h5>Emily Brown</h5>
+                                <span>ENT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 12 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Deeply professional, respectful, and compassionate gynecological examinations. I felt completely comfortable and cared for."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=150&q=80" alt="Fatima Al-Sayed">
+                            <div class="testimonial-user-info">
+                                <h5>Fatima Al-Sayed</h5>
+                                <span>Gynecology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 13 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Very structured, highly effective physical therapy for my shoulder dislocation. I am back to playing tennis in record time!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=150&q=80" alt="William Taylor">
+                            <div class="testimonial-user-info">
+                                <h5>William Taylor</h5>
+                                <span>Orthopedics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 14 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Warm, kid-friendly, and welcoming atmosphere. The pediatric department is the best in the city. Outstanding care!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80" alt="Chloe Martinez">
+                            <div class="testimonial-user-info">
+                                <h5>Chloe Martinez</h5>
+                                <span>Pediatrics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 15 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Outstanding neurological care for my grandfather's Parkinson's treatment. Highly knowledgeable and supportive doctors."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80" alt="Thomas Anderson">
+                            <div class="testimonial-user-info">
+                                <h5>Thomas Anderson</h5>
+                                <span>Neurology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 16 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Excellent dermatological acne scar treatments that yielded fantastic, visible results. My skin looks absolutely smooth now!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=150&q=80" alt="Aisha Diop">
+                            <div class="testimonial-user-info">
+                                <h5>Aisha Diop</h5>
+                                <span>Dermatology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 17 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"A truly elite and modern clinic! The online portal for booking, profiling, and viewing appointments is incredibly fast and intuitive."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=150&q=80" alt="Alexander Wright">
+                            <div class="testimonial-user-info">
+                                <h5>Alexander Wright</h5>
+                                <span>General Medicine</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 18 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Fantastic clinical experience. The orthodontic teeth alignment and deep cleaning were performed by dental absolute perfectionists!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80" alt="Olivia Green">
+                            <div class="testimonial-user-info">
+                                <h5>Olivia Green</h5>
+                                <span>Dentistry</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Testimonial 19 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Exceptional ophthalmology care! The doctors resolved my corneal problem using advanced laser procedures. Truly life-changing!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=150&q=80" alt="Michael Chang">
+                            <div class="testimonial-user-info">
+                                <h5>Michael Chang</h5>
+                                <span>Ophthalmology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 20 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"The hearing tests, audiology, and ENT specialized therapies were outstanding. The medical practitioners are incredibly skilled."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=150&q=80" alt="Sophia Rossi">
+                            <div class="testimonial-user-info">
+                                <h5>Sophia Rossi</h5>
+                                <span>ENT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 21 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Excellent recovery from my sports-related shoulder cartilage tear. The orthopedic surgeons and therapists here are absolute miracle workers."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?auto=format&fit=crop&w=150&q=80" alt="Daniel Kovac">
+                            <div class="testimonial-user-info">
+                                <h5>Daniel Kovac</h5>
+                                <span>Orthopedics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 22 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"My toddler received her routine pediatric immunizations here. The kind and supportive nurses made it an almost tear-free experience!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=150&q=80" alt="Lily Dubois">
+                            <div class="testimonial-user-info">
+                                <h5>Lily Dubois</h5>
+                                <span>Pediatrics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 23 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"My cardiac stress test and echocardiogram were conducted with absolute professional care, precision, and state-of-the-art tech."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=150&q=80" alt="Nathan Brooks">
+                            <div class="testimonial-user-info">
+                                <h5>Nathan Brooks</h5>
+                                <span>Cardiology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 24 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Highly customized dermatological solutions for skin pigmentation. I saw visual clearing in just weeks. Excellent clinical staff!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=150&q=80" alt="Isabella Silva">
+                            <div class="testimonial-user-info">
+                                <h5>Isabella Silva</h5>
+                                <span>Dermatology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 25 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Extremely thorough sleep apnea sleep study diagnostic checkups. Highly professional, responsive neurologists and sleep specialists."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1506803682981-6e718a9dd3ee?auto=format&fit=crop&w=150&q=80" alt="Yusuke Tanaka">
+                            <div class="testimonial-user-info">
+                                <h5>Yusuke Tanaka</h5>
+                                <span>Neurology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 26 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Extremely sanitary clinic facilities, super friendly support desk, and incredibly short queue waiting times. 10/10 primary care medical center!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?auto=format&fit=crop&w=150&q=80" alt="Liam O'Connor">
+                            <div class="testimonial-user-info">
+                                <h5>Liam O'Connor</h5>
+                                <span>General Medicine</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 27 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"A beautifully premium dental clinical facility. Had a completely painless complex root canal treatment. Truly exceptional dentists."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=150&q=80" alt="Hannah Schultz">
+                            <div class="testimonial-user-info">
+                                <h5>Hannah Schultz</h5>
+                                <span>Dentistry</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+                    <!-- Duplicates for seamless loop -->
+                                        <!-- Duplicate Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"The pediatricians here are incredibly gentle and friendly. My young daughter actually looks forward to her wellness checkups now!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Sarah Jenkins">
+                            <div class="testimonial-user-info">
+                                <h5>Sarah Jenkins</h5>
+                                <span>Pediatrics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Superb cardiology team. From the diagnostics stage to my recovery program, the staff monitored my progress with absolute dedication."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="David Miller">
+                            <div class="testimonial-user-info">
+                                <h5>David Miller</h5>
+                                <span>Cardiology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Outstanding neurologists! They accurately diagnosed my chronic, debilitating migraines after years of other treatments failing."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Maria Santos">
+                            <div class="testimonial-user-info">
+                                <h5>Maria Santos</h5>
+                                <span>Neurology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 4 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"My knee replacement recovery was incredibly smooth and successful. Truly skilled, elite orthopedic surgeons and physical therapists."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80" alt="James Wilson">
+                            <div class="testimonial-user-info">
+                                <h5>James Wilson</h5>
+                                <span>Orthopedics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 5 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"My laser eye procedure was a complete breeze. The ophthalmology clinic has incredibly clear procedures and state-of-the-art tech."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Emily Watson">
+                            <div class="testimonial-user-info">
+                                <h5>Emily Watson</h5>
+                                <span>Ophthalmology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 6 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Incredible gynecological and obstetric care. The obstetricians made me feel supported, safe, and heard during my entire pregnancy."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Priya Patel">
+                            <div class="testimonial-user-info">
+                                <h5>Priya Patel</h5>
+                                <span>Gynecology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 7 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Routine medical checkups are fast, professional, and very thorough. The general medicine doctors are highly empathetic and helpful."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="John Doe">
+                            <div class="testimonial-user-info">
+                                <h5>John Doe</h5>
+                                <span>General Medicine</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 8 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"They helped me completely resolve a severe eczema flare-up. Excellent, modern dermatological treatments and highly professional staff."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" alt="Lisa Wang">
+                            <div class="testimonial-user-info">
+                                <h5>Lisa Wang</h5>
+                                <span>Dermatology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 9 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"The dental team did my crown work flawlessly and completely painlessly. Hands down, the best modern dental care experience I've had."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80" alt="Marcus Aurelius">
+                            <div class="testimonial-user-info">
+                                <h5>Marcus Aurelius</h5>
+                                <span>Dentistry</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Duplicate Testimonial 10 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Fantastic post-operative cardiology rehabilitation program. The specialized doctors and nurses saved my life and restored my health."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" alt="Robert Chen">
+                            <div class="testimonial-user-info">
+                                <h5>Robert Chen</h5>
+                                <span>Cardiology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 11 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"After suffering from severe sinus pain for months, the ENT specialist here provided instant, highly effective treatment."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=150&q=80" alt="Emily Brown">
+                            <div class="testimonial-user-info">
+                                <h5>Emily Brown</h5>
+                                <span>ENT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 12 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Deeply professional, respectful, and compassionate gynecological examinations. I felt completely comfortable and cared for."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=150&q=80" alt="Fatima Al-Sayed">
+                            <div class="testimonial-user-info">
+                                <h5>Fatima Al-Sayed</h5>
+                                <span>Gynecology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 13 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Very structured, highly effective physical therapy for my shoulder dislocation. I am back to playing tennis in record time!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=150&q=80" alt="William Taylor">
+                            <div class="testimonial-user-info">
+                                <h5>William Taylor</h5>
+                                <span>Orthopedics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 14 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Warm, kid-friendly, and welcoming atmosphere. The pediatric department is the best in the city. Outstanding care!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80" alt="Chloe Martinez">
+                            <div class="testimonial-user-info">
+                                <h5>Chloe Martinez</h5>
+                                <span>Pediatrics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 15 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Outstanding neurological care for my grandfather's Parkinson's treatment. Highly knowledgeable and supportive doctors."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80" alt="Thomas Anderson">
+                            <div class="testimonial-user-info">
+                                <h5>Thomas Anderson</h5>
+                                <span>Neurology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 16 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Excellent dermatological acne scar treatments that yielded fantastic, visible results. My skin looks absolutely smooth now!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=150&q=80" alt="Aisha Diop">
+                            <div class="testimonial-user-info">
+                                <h5>Aisha Diop</h5>
+                                <span>Dermatology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 17 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"A truly elite and modern clinic! The online portal for booking, profiling, and viewing appointments is incredibly fast and intuitive."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=150&q=80" alt="Alexander Wright">
+                            <div class="testimonial-user-info">
+                                <h5>Alexander Wright</h5>
+                                <span>General Medicine</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 18 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Fantastic clinical experience. The orthodontic teeth alignment and deep cleaning were performed by dental absolute perfectionists!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80" alt="Olivia Green">
+                            <div class="testimonial-user-info">
+                                <h5>Olivia Green</h5>
+                                <span>Dentistry</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Duplicate Testimonial 19 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Exceptional ophthalmology care! The doctors resolved my corneal problem using advanced laser procedures. Truly life-changing!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=150&q=80" alt="Michael Chang">
+                            <div class="testimonial-user-info">
+                                <h5>Michael Chang</h5>
+                                <span>Ophthalmology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 20 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"The hearing tests, audiology, and ENT specialized therapies were outstanding. The medical practitioners are incredibly skilled."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=150&q=80" alt="Sophia Rossi">
+                            <div class="testimonial-user-info">
+                                <h5>Sophia Rossi</h5>
+                                <span>ENT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 21 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Excellent recovery from my sports-related shoulder cartilage tear. The orthopedic surgeons and therapists here are absolute miracle workers."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?auto=format&fit=crop&w=150&q=80" alt="Daniel Kovac">
+                            <div class="testimonial-user-info">
+                                <h5>Daniel Kovac</h5>
+                                <span>Orthopedics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 22 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"My toddler received her routine pediatric immunizations here. The kind and supportive nurses made it an almost tear-free experience!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=150&q=80" alt="Lily Dubois">
+                            <div class="testimonial-user-info">
+                                <h5>Lily Dubois</h5>
+                                <span>Pediatrics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 23 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"My cardiac stress test and echocardiogram were conducted with absolute professional care, precision, and state-of-the-art tech."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=150&q=80" alt="Nathan Brooks">
+                            <div class="testimonial-user-info">
+                                <h5>Nathan Brooks</h5>
+                                <span>Cardiology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 24 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Highly customized dermatological solutions for skin pigmentation. I saw visual clearing in just weeks. Excellent clinical staff!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=150&q=80" alt="Isabella Silva">
+                            <div class="testimonial-user-info">
+                                <h5>Isabella Silva</h5>
+                                <span>Dermatology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 25 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Extremely thorough sleep apnea sleep study diagnostic checkups. Highly professional, responsive neurologists and sleep specialists."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1506803682981-6e718a9dd3ee?auto=format&fit=crop&w=150&q=80" alt="Yusuke Tanaka">
+                            <div class="testimonial-user-info">
+                                <h5>Yusuke Tanaka</h5>
+                                <span>Neurology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 26 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"Extremely sanitary clinic facilities, super friendly support desk, and incredibly short queue waiting times. 10/10 primary care medical center!"</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?auto=format&fit=crop&w=150&q=80" alt="Liam O'Connor">
+                            <div class="testimonial-user-info">
+                                <h5>Liam O'Connor</h5>
+                                <span>General Medicine</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Duplicate Testimonial 27 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        </div>
+                        <p class="testimonial-quote">"A beautifully premium dental clinical facility. Had a completely painless complex root canal treatment. Truly exceptional dentists."</p>
+                        <div class="testimonial-user">
+                            <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=150&q=80" alt="Hannah Schultz">
+                            <div class="testimonial-user-info">
+                                <h5>Hannah Schultz</h5>
+                                <span>Dentistry</span>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -418,7 +1368,264 @@
         </div>
     </footer>
 
+    <!-- Patient Authentication Modal -->
+    <div class="modal-overlay" id="auth-modal">
+        <div class="modal-container">
+            <div class="modal-close" id="auth-modal-close">
+                <i class="ri-close-line"></i>
+            </div>
+            
+            <div class="auth-header">
+                <h2 id="auth-modal-title">Welcome Back</h2>
+                <p id="auth-modal-subtitle">Log in to manage your medical records and appointments.</p>
+            </div>
+            
+            <form id="auth-form">
+                <!-- Registration Specific Field (Initially hidden) -->
+                <div class="auth-form-group" id="reg-name-group" style="display: none;">
+                    <label for="reg-name">Full Name</label>
+                    <input type="text" id="reg-name" class="auth-form-control" placeholder="Enter your full name">
+                </div>
+                
+                <div class="auth-form-group">
+                    <label for="auth-email">Email Address</label>
+                    <input type="email" id="auth-email" class="auth-form-control" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="auth-form-group">
+                    <label for="auth-password">Password</label>
+                    <input type="password" id="auth-password" class="auth-form-control" placeholder="Enter your password" required>
+                </div>
+                
+                <button type="submit" class="auth-btn-submit" id="auth-submit-btn">Log In</button>
+            </form>
+            
+            <div class="auth-divider">or</div>
+            
+            <button class="auth-btn-google" id="google-signin-btn">
+                <i class="ri-google-fill"></i>
+                Sign in with Google
+            </button>
+            
+            <div class="auth-switch">
+                <span id="auth-mode-switch-text">Don't have an account? <span id="auth-toggle-mode">Sign Up</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Patient Profile Edit Modal -->
+    <div class="modal-overlay" id="profile-modal">
+        <div class="modal-container" style="max-width: 500px;">
+            <div class="modal-close" id="profile-modal-close">
+                <i class="ri-close-line"></i>
+            </div>
+            
+            <div class="auth-header">
+                <h2>Patient Profile</h2>
+                <p>View and update your personal and medical information.</p>
+            </div>
+            
+            <form id="profile-form">
+                <div class="form-row-2">
+                    <div class="auth-form-group">
+                        <label for="profile-name">Full Name</label>
+                        <input type="text" id="profile-name" class="auth-form-control" placeholder="Full name" required>
+                    </div>
+                    <div class="auth-form-group">
+                        <label for="profile-phone">Phone Number</label>
+                        <input type="tel" id="profile-phone" class="auth-form-control" placeholder="Phone number">
+                    </div>
+                </div>
+                
+                <div class="form-row-2">
+                    <div class="auth-form-group">
+                        <label for="profile-dob">Date of Birth</label>
+                        <input type="date" id="profile-dob" class="auth-form-control">
+                    </div>
+                    <div class="auth-form-group">
+                        <label for="profile-sex">Sex</label>
+                        <select id="profile-sex" class="auth-form-control">
+                            <option value="">Select Sex</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row-3">
+                    <div class="auth-form-group">
+                        <label for="profile-blood">Blood Group</label>
+                        <select id="profile-blood" class="auth-form-control">
+                            <option value="">Blood Group</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                    <div class="auth-form-group">
+                        <label for="profile-weight">Weight (kg)</label>
+                        <input type="number" step="0.1" id="profile-weight" class="auth-form-control" placeholder="kg">
+                    </div>
+                    <div class="auth-form-group">
+                        <label for="profile-height">Height (cm)</label>
+                        <input type="number" step="0.1" id="profile-height" class="auth-form-control" placeholder="cm">
+                    </div>
+                </div>
+                
+                <button type="submit" class="auth-btn-submit" id="profile-submit-btn" style="margin-top: 1.5rem;">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Patient Appointments Modal -->
+    <div class="modal-overlay" id="appointments-modal">
+        <div class="modal-container" style="max-width: 600px;">
+            <div class="modal-close" id="appointments-modal-close">
+                <i class="ri-close-line"></i>
+            </div>
+            
+            <div class="auth-header" style="margin-bottom: 1.5rem;">
+                <h2>My Appointments</h2>
+                <p>View your scheduled bookings and clinic visits.</p>
+            </div>
+            
+            <div id="appointments-stats-summary" style="display: none; margin-bottom: 1.25rem;"></div>
+            
+            <div class="appointments-list-container" id="appointments-list-container">
+                <!-- Dynamic appointment cards injected here -->
+                <div class="appointments-loading">
+                    <i class="ri-loader-4-line spin-icon"></i> Loading appointments...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Medical Shop Full-Screen Modal -->
+    <div class="modal-overlay" id="shop-modal">
+        <div class="modal-container shop-modal-card">
+            <div class="modal-close" id="shop-modal-close">
+                <i class="ri-close-line"></i>
+            </div>
+            
+            <div class="shop-modal-header">
+                <h2>Medisphere Medical Shop</h2>
+                <p>Browse our expanded selection of premium vitamins, devices, and healthcare essentials.</p>
+            </div>
+            
+            <div class="shop-filter-bar">
+                <div class="shop-search-wrapper">
+                    <i class="ri-search-line search-icon"></i>
+                    <input type="text" id="shop-search" placeholder="Search products...">
+                </div>
+                
+                <div class="shop-categories" id="shop-categories">
+                    <button class="filter-pill active" data-category="all">All</button>
+                    <button class="filter-pill" data-category="supplements">Supplements</button>
+                    <button class="filter-pill" data-category="devices">Devices</button>
+                    <button class="filter-pill" data-category="essentials">Essentials</button>
+                    <button class="filter-pill" data-category="nutrition">Nutrition</button>
+                </div>
+                
+                <div class="shop-sort-wrapper">
+                    <select id="shop-sort">
+                        <option value="default">Sort by: Default</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name-asc">Name: A to Z</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="shop-modal-grid-container">
+                <div class="shop-modal-grid" id="shop-modal-grid">
+                    <!-- Dynamic product cards will be injected here -->
+                </div>
+                <div class="shop-no-results" id="shop-no-results">
+                    <i class="ri-find-replace-line"></i>
+                    <p>No products found matching your search or filters.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Medical Shopping Cart Modal -->
+    <div class="modal-overlay" id="cart-modal">
+        <div class="modal-container cart-modal-card">
+            <div class="modal-close" id="cart-modal-close">
+                <i class="ri-close-line"></i>
+            </div>
+            
+            <div class="cart-modal-header">
+                <h2><i class="ri-shopping-cart-2-line"></i> Shopping Cart</h2>
+                <p>Review your premium healthcare selections before secure checkout.</p>
+            </div>
+            
+            <!-- Cart Content Wrapper (Hidden if empty) -->
+            <div class="cart-modal-content-wrapper" id="cart-content-wrapper">
+                <div class="cart-items-list" id="cart-items-list">
+                    <!-- Dynamic cart items will be injected here -->
+                </div>
+                
+                <div class="cart-sidebar-panel">
+                    <!-- Promo Code Area -->
+                    <div class="cart-promo-container">
+                        <div class="promo-input-group">
+                            <input type="text" id="cart-promo-input" placeholder="Promo code (e.g. MEDISPHERE15)">
+                            <button id="cart-promo-apply-btn" class="btn">Apply</button>
+                        </div>
+                        <div class="promo-feedback" id="cart-promo-feedback"></div>
+                    </div>
+                    
+                    <!-- Costs Summary Area -->
+                    <div class="cart-summary-container">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="cart-subtotal">₹0</span>
+                        </div>
+                        <div class="summary-row text-success" id="cart-discount-row" style="display: none;">
+                            <span>Discount <span class="promo-badge" id="cart-promo-badge"></span></span>
+                            <span id="cart-discount">-₹0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>GST (18%)</span>
+                            <span id="cart-tax">₹0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span id="cart-shipping">₹0</span>
+                        </div>
+                        <div class="summary-total-divider"></div>
+                        <div class="summary-row total-row">
+                            <span>Grand Total</span>
+                            <span id="cart-total">₹0</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Checkout Button -->
+                    <button class="btn btn-primary checkout-btn" id="cart-checkout-btn">
+                        <span>Proceed to Secure Checkout</span>
+                    </button>
+                    <p class="checkout-footer-text"><i class="ri-shield-check-line"></i> Secure 256-bit SSL encrypted payments.</p>
+                </div>
+            </div>
+            
+            <!-- Cart Empty State (Shown if empty) -->
+            <div class="cart-empty-state" id="cart-empty-state">
+                <i class="ri-shopping-cart-2-line"></i>
+                <h3>Your Cart is Empty</h3>
+                <p>Explore our medical shop to find premium vitamins, wellness devices, and essential clinic products.</p>
+                <button class="btn btn-primary" id="cart-explore-btn">Explore Shop</button>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript -->
-    <script src="assets/js/script.js"></script>
+    <script type="module" src="assets/js/script.js"></script>
 </body>
 </html>

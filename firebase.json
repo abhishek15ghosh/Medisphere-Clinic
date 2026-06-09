@@ -1,0 +1,14 @@
+{
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "auth": {
+    "providers": {
+      "emailPassword": true,
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "Medisphere Clinic",
+        "supportEmail": "ag203328@gmail.com"
+      }
+    }
+  }
+}
